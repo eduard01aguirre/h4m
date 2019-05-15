@@ -1,0 +1,39 @@
+<ion-header color="dark">
+  <ion-toolbar mode="ios">
+    <ion-buttons slot="start" >
+      <ion-menu-button color='dark'></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      {{titulo}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark">
+    <ion-card class="welcome-card" color="medium" *ngFor="let s of this.rs.salas" >
+     
+      <ion-card-content>
+        <ion-item lines="none" color="medium" detail="false">
+            <h3 style="font-size: 20px" [routerLink]="[ '/sala/' + s.sala]" > {{s.sala}} </h3>
+
+            <ion-button fill="clear" slot="end" (click)="cambio(s)">
+                <ion-icon [ngStyle]="{'color': s.on === 1 ? 'mediumaquamarine' : 'gray'}"
+                style="color:mediumaquamarine; font-size: 30px" mode="md" name="power"></ion-icon>
+              </ion-button>
+
+        </ion-item>
+
+        <ion-button [color]="s.status" fill ="clear"  *ngFor="let i of btns">
+
+          <ng-container *ngIf="i['name']== 'thermometer' " >
+            {{s.tmp}} {{i.text}}
+          </ng-container>
+      
+          <ion-icon slot="start" mode="ios" [name]="i.name"></ion-icon>
+        </ion-button>
+        
+      </ion-card-content>
+    </ion-card>
+
+    
+</ion-content>

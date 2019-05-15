@@ -1,0 +1,14 @@
+.welcome-card ion-img {
+  max-height: 35vh;
+  overflow: hidden;
+  
+}
+.welcome-card {
+  border: 1px solid  rgb(173, 171, 171);
+  cursor: pointer;
+}
+.welcome-card:active{
+  background-color: #585858;
+  transform: translateY(2px);
+
+}
