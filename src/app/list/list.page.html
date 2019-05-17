@@ -4,24 +4,32 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>
-      List
+      Agregar sala
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-list>
-    <ion-item *ngFor="let item of items">
-      <ion-icon [name]="item.icon" slot="start"></ion-icon>
-      {{item.title}}
-      <div class="item-note" slot="end">
-        {{item.note}}
-      </div>
+<ion-content padding>
+
+  <h5><b>Nombre de la sala:</b></h5>
+  <ion-item>
+    <ion-input type="text" maxlength='20'>
+    </ion-input>
+  </ion-item>
+
+  <ion-item>
+      <ion-label>Tipo de sala</ion-label>
+      <ion-select placeholder="Selecciona una" cancel-text="Cancelar">
+        <ion-select-option value="cocina" >Cocina</ion-select-option>
+        <ion-select-option value="reca">Recamara</ion-select-option>
+        <ion-select-option value="sala" >Sala</ion-select-option>
+        <ion-select-option value="banio">Baño</ion-select-option>
+        <ion-select-option value="comedor" >Comedor</ion-select-option>
+      </ion-select>
     </ion-item>
-  </ion-list>
-  <!--
-    <div *ngIf="selectedItem" padding>
-      You navigated here from <b>{{selectedItem.title }}</b>
-    </div>
-  -->
+
+    <ion-button expand ='block' color ='secondary'>
+      <ion-icon name='add' slot='start'></ion-icon>
+      Agregar
+    </ion-button>
 </ion-content>

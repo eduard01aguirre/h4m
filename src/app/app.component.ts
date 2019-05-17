@@ -17,7 +17,7 @@ export class AppComponent {
     },
     {
       title: 'Agregar sala',
-      url: '/',
+      url: '/list',
       icon: 'add-circle-outline'
     },
     {

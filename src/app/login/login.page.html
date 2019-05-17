@@ -16,16 +16,21 @@
     <ion-card-content>
       <ion-item color="light">
           <ion-label color="dark" position="floating">Usuario</ion-label>
-          <ion-input type="text"  maxlength='15'></ion-input>
+          <ion-input type="text" [(ngModel)]="user" maxlength='15'></ion-input>
         </ion-item>
     
         <ion-item color="light" >
           <ion-label color="dark" position="floating" >Contraseña</ion-label>
-          <ion-input type="password"  maxlength='30'></ion-input>
+          <ion-input type="password" [(ngModel)]="pass" maxlength='30'></ion-input>
         </ion-item>
 
-        <ion-button expand="block" color="dark" [routerLink]="[ '/home']">
+        <ion-button expand="block" color="dark" [routerLink]="[ '/home']" 
+                    [disabled]="!user || !pass" (click)="login()">
           Iniciar Sesion
+        </ion-button>
+
+        <ion-button fill="clear" color='dark' [routerLink]="[ '/signin']">
+          Registrarse
         </ion-button>
     </ion-card-content>
   </ion-card>

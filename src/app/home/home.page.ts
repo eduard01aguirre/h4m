@@ -25,12 +25,12 @@ export class HomePage {
     this.rs.salas.forEach(e => {
       if(sala["sala"] === e["sala"]){
         if(e['status'] === "light"){
-          //e["status"] = "dark";
-          //e["on"] = 0;
+          e["status"] = "dark";
+          e["on"] = 0;
 
         } else {
-          //e["status"] = "light";
-          //e["on"] = 1;
+          e["status"] = "light";
+          e["on"] = 1;
         }
       }
     });
