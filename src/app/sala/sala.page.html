@@ -7,42 +7,42 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content color="dark">
+<ion-content color="medium">
 
-  <ion-card color="medium" class="carta" >
+  <ion-card  class="carta" (click)="onoff(1)">
     <ion-card-content style="text-align:center">
       <h3 style="font-size: 20px"> General </h3>
-      <ion-icon name="power" style="color:aquamarine;font-size:45px"></ion-icon>
+      <ion-icon class='icono' name="power" [ngStyle]="{ 'color': ( onOff1 ? 'aquamarine' : 'rgb(235, 233, 233)')}"></ion-icon>
       <p>Apaga todas las luces y los aparatos electronicos de esta sala</p>
-      <ion-toggle color="secondary" checked></ion-toggle>
+      <!-- <ion-toggle color="secondary" checked></ion-toggle> -->
     </ion-card-content>
 
   </ion-card>
 
   <!-- luces -->
-  <ion-card color="medium" class="carta" >
+  <ion-card  class="carta" (click)="onoff(2)">
       <ion-card-content style="text-align:center">
         <h3 style="font-size: 20px"> Luces </h3>
-        <ion-icon  name="sunny" style="color:aquamarine;font-size:45px"></ion-icon>
+        <ion-icon class='icono' name="sunny" [ngStyle]="{ 'color': ( onOff2 ? 'aquamarine' : 'rgb(235, 233, 233)')}"></ion-icon>
         <p>Apaga todas las luces de esta sala</p>
-        <ion-toggle color="secondary" checked></ion-toggle>
+        <!-- <ion-toggle color="secondary" checked></ion-toggle> -->
       </ion-card-content>
   
     </ion-card>
 
      <!-- Termome -->
-  <ion-card color="medium" class="carta" >
+  <ion-card  class="carta2" >
       <ion-card-content style="text-align:center">
         <h3 style="font-size: 20px"> Termostato </h3>
-        <ion-icon  name="thermometer" mode="ios" style="color:aquamarine;font-size:45px">
+        <ion-icon  name="thermometer" mode="ios" style="color:aquamarine; font-size:45px">
         </ion-icon>
         <p>Calibre la temperatura del termostato</p>
         <h3 style="font-size: 20px"> {{temp}} C° </h3>
 
-        <ion-item color="medium" lines="none">
+        <ion-item color="medium" lines="none" >
           <ion-range mode="md" (ionChange)="cambio()" [value]="sala.tmp" min="15" max="30" step="1" pin="true" snaps="true" ticks="true" color="secondary" >
-            <ion-icon size="small" slot="start" name="snow"></ion-icon>
-            <ion-icon slot="end" name="flame"></ion-icon>
+            <ion-icon size="small" color="#a1f1e7"slot="start" name="snow"></ion-icon>
+            <ion-icon slot="end" color="#f36f6f" name="flame"></ion-icon>
           </ion-range>
         </ion-item>
 

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RoomService } from '../room.service';
+import { UsuarioService } from '../services/usuario/usuario.service';
 
 @Component({
   selector: 'app-home',
@@ -17,7 +18,7 @@ export class HomePage {
     {name:"thermometer",mode:"ios",text:"C°"},
   ]
 
-  constructor(public rs: RoomService){
+  constructor(public rs: RoomService,  private usuario: UsuarioService){
     console.log(rs.salas)
   }
 
